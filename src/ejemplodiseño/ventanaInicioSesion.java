@@ -26,12 +26,11 @@ ControlPass control2 = new ControlPass();
         jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jlOlvido = new javax.swing.JLabel();
+        jbOlvido = new javax.swing.JLabel();
         jtPass = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 51, 102));
@@ -81,15 +80,15 @@ ControlPass control2 = new ControlPass();
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jCheckBox1.setText("Recuerdame");
 
-        jlOlvido.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jlOlvido.setText("Olvidaste la contraseña?");
-        jlOlvido.setToolTipText("");
-        jlOlvido.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jlOlvido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jlOlvido.setName(""); // NOI18N
-        jlOlvido.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbOlvido.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jbOlvido.setText("Olvidaste la contraseña?");
+        jbOlvido.setToolTipText("");
+        jbOlvido.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jbOlvido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jbOlvido.setName(""); // NOI18N
+        jbOlvido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jlOlvidoMouseClicked(evt);
+                jbOlvidoMouseClicked(evt);
             }
         });
 
@@ -101,7 +100,7 @@ ControlPass control2 = new ControlPass();
                 .addGap(15, 15, 15)
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(jlOlvido)
+                .addComponent(jbOlvido)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -110,7 +109,7 @@ ControlPass control2 = new ControlPass();
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
-                    .addComponent(jlOlvido)))
+                    .addComponent(jbOlvido)))
         );
 
         jtPass.setText("******************");
@@ -188,15 +187,6 @@ ControlPass control2 = new ControlPass();
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ejemplodiseño/usuarioSup.png"))); // NOI18N
 
-        jButton2.setBackground(new java.awt.Color(60, 63, 65));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jButton2.setText("Olvidaste la contraseña?");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setMaximumSize(new java.awt.Dimension(105, 14));
-        jButton2.setMinimumSize(new java.awt.Dimension(105, 14));
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -215,8 +205,7 @@ ControlPass control2 = new ControlPass();
                 .addContainerGap(26, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
         );
         jPanel1Layout.setVerticalGroup(
@@ -236,9 +225,7 @@ ControlPass control2 = new ControlPass();
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -300,10 +287,13 @@ ControlPass control2 = new ControlPass();
         } 
     }//GEN-LAST:event_jtPassFocusLost
 
-    private void jlOlvidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlOlvidoMouseClicked
+    private void jbOlvidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbOlvidoMouseClicked
         // TODO add your handling code here:
-        System.out.println("prueba");
-    }//GEN-LAST:event_jlOlvidoMouseClicked
+        String aux;
+        aux = JOptionPane.showInputDialog(this, "*** Ingrese el correo de la contraseña a recuperar ***"); 
+        JOptionPane.showMessageDialog(this, "Se envio un enlace de recuperacion al correo: "+aux); 
+        
+    }//GEN-LAST:event_jbOlvidoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -344,7 +334,6 @@ ControlPass control2 = new ControlPass();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -358,7 +347,7 @@ ControlPass control2 = new ControlPass();
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel jlOlvido;
+    private javax.swing.JLabel jbOlvido;
     private javax.swing.JTextField jtCorreo;
     private javax.swing.JPasswordField jtPass;
     // End of variables declaration//GEN-END:variables
