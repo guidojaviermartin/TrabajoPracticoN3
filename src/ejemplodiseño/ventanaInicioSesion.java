@@ -1,5 +1,7 @@
 package ejemplodiseño;
 
+import javax.swing.JOptionPane;
+
 public class ventanaInicioSesion extends javax.swing.JFrame {
 String jt1, jt2;
     public ventanaInicioSesion() {
@@ -222,8 +224,14 @@ String jt1, jt2;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         jt1 = jtCorreo.getText();
+        jt2 = jtPass.getText();
         ControlMail control1 = new ControlMail();
-        control1.verificaMail(jt1);
+        ControlPass control2 = new ControlPass();
+        if(control1.verificaMail(jt1)||control2.verificaPass(jt2)){ 
+            JOptionPane.showMessageDialog(this, "                  ERROR!!!\n*** Usuario y/o contraseña incorrectos ***");   
+        }else{
+            JOptionPane.showMessageDialog(this, "               Usuario Valido\n*** Bienvenido al Campus ULP ***");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
