@@ -291,8 +291,11 @@ ControlPass control2 = new ControlPass();
         // TODO add your handling code here:
         String aux;
         aux = JOptionPane.showInputDialog(this, "*** Ingrese el correo de la contraseña a recuperar ***"); 
-        JOptionPane.showMessageDialog(this, "Se envio un enlace de recuperacion al correo: "+aux); 
-        
+        if(!aux.contains("@")){
+            JOptionPane.showMessageDialog(this,"ERROR, Ingrese un correo valido");
+        }else{
+            JOptionPane.showMessageDialog(this, "Se envio un enlace de recuperacion al correo: "+aux); 
+        }
     }//GEN-LAST:event_jbOlvidoMouseClicked
 
     /**
