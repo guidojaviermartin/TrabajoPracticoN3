@@ -84,7 +84,7 @@ ControlPass control2 = new ControlPass();
         jbOlvido.setText("Olvidaste la contraseña?");
         jbOlvido.setToolTipText("");
         jbOlvido.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jbOlvido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jbOlvido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jbOlvido.setName(""); // NOI18N
         jbOlvido.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
