@@ -5,8 +5,7 @@ import javax.swing.JOptionPane;
 public class ventanaInicioSesion extends javax.swing.JFrame {
 String jt1, jt2;
     public ventanaInicioSesion() {
-        initComponents();
-        
+        initComponents();   
     }
 
     @SuppressWarnings("unchecked")
@@ -19,14 +18,14 @@ String jt1, jt2;
         jPanel2 = new javax.swing.JPanel();
         jtCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jpPass = new javax.swing.JTextField();
+        jtPass = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel5 = new javax.swing.JLabel();
+        jlOlvido = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -59,7 +58,7 @@ String jt1, jt2;
 
         jtCorreo.setText("Ingrese el usuario");
 
-        jpPass.setText("*************");
+        jtPass.setText("*************");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ejemplodiseño/usuario.png"))); // NOI18N
 
@@ -68,9 +67,9 @@ String jt1, jt2;
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jCheckBox1.setText("Recuerdame");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel5.setText("Olvidaste la contraseña?");
-        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jlOlvido.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jlOlvido.setText("Olvidaste la contraseña?");
+        jlOlvido.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -80,7 +79,7 @@ String jt1, jt2;
                 .addGap(15, 15, 15)
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(jlOlvido)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -89,7 +88,7 @@ String jt1, jt2;
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
-                    .addComponent(jLabel5)))
+                    .addComponent(jlOlvido)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -109,7 +108,7 @@ String jt1, jt2;
                         .addComponent(jLabel9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jpPass)
+                    .addComponent(jtPass)
                     .addComponent(jtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -133,7 +132,7 @@ String jt1, jt2;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jpPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,7 +147,7 @@ String jt1, jt2;
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(79, 112, 147));
         jButton1.setText("Verificar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ejemplodiseño/usuarioSup.png"))); // NOI18N
 
@@ -247,7 +246,7 @@ public void enviarMensajeDeError(){
     if(jt1.equals("")|| jt1.equals("ejemplo@ejemplo.com")||jt2.equals("")||jt2.equals("**********")){
         JOptionPane.showMessageDialog(this, "*** Error: 'Usuario y/o Contraseña' vacios ***");
         jtCorreo.setText("");
-        jpPass.setText("");
+        jtPass.setText("");
     }
 }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,7 +256,6 @@ public void enviarMensajeDeError(){
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -266,7 +264,8 @@ public void enviarMensajeDeError(){
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jpPass;
+    private javax.swing.JLabel jlOlvido;
     private javax.swing.JTextField jtCorreo;
+    private javax.swing.JTextField jtPass;
     // End of variables declaration//GEN-END:variables
 }
