@@ -1,7 +1,5 @@
 package ejemplodiseño;
 
-import javax.swing.JOptionPane;
-
 public class ControlMail {
     
     public ControlMail() {

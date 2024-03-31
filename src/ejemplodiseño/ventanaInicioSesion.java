@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 
 public class ventanaInicioSesion extends javax.swing.JFrame {
 String jt1, jt2;
+ControlMail control1 = new ControlMail();
+ControlPass control2 = new ControlPass();
     public ventanaInicioSesion() {
         initComponents();   
     }
@@ -18,7 +20,6 @@ String jt1, jt2;
         jPanel2 = new javax.swing.JPanel();
         jtCorreo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jtPass = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -26,6 +27,7 @@ String jt1, jt2;
         jPanel4 = new javax.swing.JPanel();
         jCheckBox1 = new javax.swing.JCheckBox();
         jlOlvido = new javax.swing.JLabel();
+        jtPass = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -57,13 +59,19 @@ String jt1, jt2;
         );
 
         jtCorreo.setText("Ingrese el usuario");
+        jtCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtCorreoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtCorreoFocusLost(evt);
+            }
+        });
         jtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtCorreoActionPerformed(evt);
             }
         });
-
-        jtPass.setText("*************");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ejemplodiseño/usuario.png"))); // NOI18N
 
@@ -96,6 +104,16 @@ String jt1, jt2;
                     .addComponent(jlOlvido)))
         );
 
+        jtPass.setText("******************");
+        jtPass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jtPassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtPassFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,8 +131,8 @@ String jt1, jt2;
                         .addComponent(jLabel9)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtPass)
-                    .addComponent(jtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                    .addComponent(jtCorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                    .addComponent(jtPass))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 34, Short.MAX_VALUE)
@@ -225,14 +243,41 @@ String jt1, jt2;
         // TODO add your handling code here:
         jt1 = jtCorreo.getText();
         jt2 = jtPass.getText();
-        ControlMail control1 = new ControlMail();
-        ControlPass control2 = new ControlPass();
         if(control1.verificaMail(jt1)||control2.verificaPass(jt2)){ 
             JOptionPane.showMessageDialog(this, "                  ERROR!!!\n*** Usuario y/o contraseña incorrectos ***");   
         }else{
             JOptionPane.showMessageDialog(this, "               Usuario Valido\n*** Bienvenido al Campus ULP ***");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jtCorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCorreoFocusGained
+        // TODO add your handling code here:
+        if(jtCorreo.getText().equals("Ingrese el usuario")){
+            jtCorreo.setText("");
+        } 
+              
+    }//GEN-LAST:event_jtCorreoFocusGained
+
+    private void jtCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtCorreoFocusLost
+        // TODO add your handling code here:
+        if(jtCorreo.getText().equals("")){
+            jtCorreo.setText("Ingrese el usuario");
+        } 
+    }//GEN-LAST:event_jtCorreoFocusLost
+
+    private void jtPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtPassFocusGained
+        // TODO add your handling code here:
+        if(jtPass.getText().equals("******************")){
+            jtPass.setText("");
+        } 
+    }//GEN-LAST:event_jtPassFocusGained
+
+    private void jtPassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtPassFocusLost
+        // TODO add your handling code here:
+        if(jtPass.getText().equals("")){
+            jtPass.setText("******************");
+        } 
+    }//GEN-LAST:event_jtPassFocusLost
 
     /**
      * @param args the command line arguments
@@ -288,6 +333,6 @@ String jt1, jt2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel jlOlvido;
     private javax.swing.JTextField jtCorreo;
-    private javax.swing.JTextField jtPass;
+    private javax.swing.JPasswordField jtPass;
     // End of variables declaration//GEN-END:variables
 }

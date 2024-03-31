@@ -1,7 +1,5 @@
 package ejemplodiseño;
 
-import javax.swing.JOptionPane;
-
 public class ControlPass {
 
     public ControlPass() {
