@@ -1,7 +1,5 @@
 package ejemplodiseño;
 
-import javax.swing.JOptionPane;
-
 public class ventanaInicioSesion extends javax.swing.JFrame {
 String jt1, jt2;
     public ventanaInicioSesion() {
@@ -57,6 +55,11 @@ String jt1, jt2;
         );
 
         jtCorreo.setText("Ingrese el usuario");
+        jtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtCorreoActionPerformed(evt);
+            }
+        });
 
         jtPass.setText("*************");
 
@@ -148,6 +151,11 @@ String jt1, jt2;
         jButton1.setForeground(new java.awt.Color(79, 112, 147));
         jButton1.setText("Verificar");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ejemplodiseño/usuarioSup.png"))); // NOI18N
 
@@ -206,6 +214,18 @@ String jt1, jt2;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCorreoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtCorreoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jt1 = jtCorreo.getText();
+        ControlMail control1 = new ControlMail();
+        control1.verificaMail(jt1);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -242,13 +262,7 @@ String jt1, jt2;
         });
         
     }
-public void enviarMensajeDeError(){
-    if(jt1.equals("")|| jt1.equals("ejemplo@ejemplo.com")||jt2.equals("")||jt2.equals("**********")){
-        JOptionPane.showMessageDialog(this, "*** Error: 'Usuario y/o Contraseña' vacios ***");
-        jtCorreo.setText("");
-        jtPass.setText("");
-    }
-}
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
